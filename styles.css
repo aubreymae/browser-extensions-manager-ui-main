@@ -1,9 +1,40 @@
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
 html {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(180deg, #040918 0%, #091540 100%);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 body {
+  color: hsl(0, 0%, 78%);
+}
+
+h1,
+h2,
+h3 {
+  padding: 0;
+  margin: 0;
+}
+
+.menu {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 0;
+}
+
+.menu button {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  border-radius: 1rem;
+  background-color: hsl(226, 25%, 17%);
   color: hsl(0, 0%, 78%);
 }
