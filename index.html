@@ -13,37 +13,34 @@
     />
 
     <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.google.com/noto/specimen/Noto+Sans"
+    />
 
     <title>Frontend Mentor | Browser extensions manager UI</title>
   </head>
   <body>
     <menu class="menu">
-      <h2>Extensions List</h2>
-      <button>All</button>
-      <button>Active</button>
-      <button>Inactive</button>
+      <div class="heading">
+        <h2>Extensions List</h2>
+      </div>
+      <div class="filters">
+        <button>All</button>
+        <button>Active</button>
+        <button>Inactive</button>
+      </div>
     </menu>
 
-    <!-- If you plan to use the JSON file to populate the data dynamically, you can delete the content below -->
-
-    DevLens Quickly inspect page layouts and visualize element boundaries.
-    Remove StyleSpy Instantly analyze and copy CSS from any webpage element.
-    Remove SpeedBoost Optimizes browser resource usage to accelerate page
-    loading. Remove JSONWizard Formats, validates, and prettifies JSON responses
-    in-browser. Remove TabMaster Pro Organizes browser tabs into groups and
-    sessions. Remove ViewportBuddy Simulates various screen resolutions directly
-    within the browser. Remove Markup Notes Enables annotation and notes
-    directly onto webpages for collaborative debugging. Remove GridGuides
-    Overlay customizable grids and alignment guides on any webpage. Remove
-    Palette Picker Instantly extracts color palettes from any webpage. Remove
-    LinkChecker Scans and highlights broken links on any page. Remove DOM
-    Snapshot Capture and export DOM structures quickly. Remove ConsolePlus
-    Enhanced developer console with advanced filtering and logging. Remove
+    <!-- Dynamically add list of browser extensions here -->
+    <section id="extension-list"></section>
 
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-      Coded by <a href="#">Your Name Here</a>.
+      Coded by <a href="#">Aubrey</a>.
     </div>
+
+    <script type="text/javascript" src="./script.js"></script>
   </body>
 </html>
