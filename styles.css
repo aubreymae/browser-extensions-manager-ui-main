@@ -33,11 +33,21 @@ body {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   padding: 0;
   margin: 0;
   color: hsl(200, 60%, 99%);
 }
+
+button {
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Custom Classes */
 
 .menu {
   display: flex;
@@ -54,6 +64,11 @@ h3 {
   color: hsl(0, 0%, 78%);
 }
 
+.menu button:focus {
+  background-color: hsl(3, 71%, 56%);
+  color: hsl(227, 75%, 14%);
+}
+
 .filters {
   margin-left: auto;
 }
@@ -66,4 +81,16 @@ h3 {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.extension-card {
+  padding: 1rem;
+  border-radius: 10%;
+  background-color: hsl(226, 25%, 17%);
 }
