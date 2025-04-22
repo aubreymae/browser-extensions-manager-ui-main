@@ -47,7 +47,18 @@ button {
   cursor: pointer;
 }
 
-/* Custom Classes */
+/* Header */
+header {
+  padding: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  background-color: hsl(226, 25%, 17%);
+  font-weight: bold;
+  color: hsl(200, 60%, 99%);
+}
+
+/* Menu */
 
 .menu {
   display: flex;
@@ -89,6 +100,7 @@ button {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+  margin-top: 2rem;
 }
 
 .extension-card {
