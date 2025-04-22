@@ -59,12 +59,14 @@ button {
 .menu button {
   padding-right: 1rem;
   padding-left: 1rem;
+  border: 1px solid hsl(225, 23%, 24%);
   border-radius: 1rem;
   background-color: hsl(226, 25%, 17%);
   color: hsl(0, 0%, 78%);
 }
 
 .menu button:focus {
+  border: 1px solid hsl(225, 23%, 24%);
   background-color: hsl(3, 71%, 56%);
   color: hsl(227, 75%, 14%);
 }
@@ -90,7 +92,9 @@ button {
 }
 
 .extension-card {
+  height: 150px;
   padding: 1rem;
-  border-radius: 10%;
+  border: 1px solid hsl(225, 23%, 24%);
+  border-radius: 20px;
   background-color: hsl(226, 25%, 17%);
 }
