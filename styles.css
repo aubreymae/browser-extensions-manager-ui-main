@@ -26,8 +26,8 @@ html {
 }
 
 body {
-  margin-right: 5rem;
-  margin-left: 5rem;
+  margin-right: 10rem;
+  margin-left: 10rem;
   color: hsl(0, 0%, 78%);
 }
 
@@ -104,9 +104,20 @@ header {
 }
 
 .extension-card {
+  display: flex;
   height: 150px;
   padding: 1rem;
   border: 1px solid hsl(225, 23%, 24%);
   border-radius: 20px;
   background-color: hsl(226, 25%, 17%);
+}
+
+.card-header {
+  display: flex;
+  gap: 1rem;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
 }
