@@ -14,15 +14,18 @@ const extensionCard =
         const extName = document.createElement("h4");
         const extDesc = document.createElement("p");
         const icon = document.createElement("img");
+        const removeBtn = document.createElement("button");
 
         // Customize card component
         card.className = "extension-card";
         cardHeader.className = "card-header";
+        cardFooter.className = "card-footer";
         icon.className = "icon";
 
         // Get extension name
         extName.textContent = data[i].name;
         extDesc.textContent = data[i].description;
+        removeBtn.textContent = "Remove";
 
         icon.src = data[i].logo;
 
@@ -30,6 +33,7 @@ const extensionCard =
         cardText.appendChild(extDesc);
         cardHeader.appendChild(icon);
         cardHeader.appendChild(cardText);
+        cardFooter.appendChild(removeBtn);
         card.appendChild(cardHeader);
         card.appendChild(cardFooter);
         container.appendChild(card);

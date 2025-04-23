@@ -45,6 +45,13 @@ button {
   background: none;
   border: none;
   cursor: pointer;
+
+  padding-right: 1rem;
+  padding-left: 1rem;
+  border: 1px solid hsl(225, 23%, 24%);
+  border-radius: 1rem;
+  background-color: hsl(226, 25%, 17%);
+  color: hsl(0, 0%, 78%);
 }
 
 /* Header */
@@ -65,15 +72,6 @@ header {
   gap: 1rem;
   padding: 1rem;
   margin: 0;
-}
-
-.menu button {
-  padding-right: 1rem;
-  padding-left: 1rem;
-  border: 1px solid hsl(225, 23%, 24%);
-  border-radius: 1rem;
-  background-color: hsl(226, 25%, 17%);
-  color: hsl(0, 0%, 78%);
 }
 
 .menu button:focus {
@@ -104,7 +102,6 @@ header {
 }
 
 .extension-card {
-  display: flex;
   height: 150px;
   padding: 1rem;
   border: 1px solid hsl(225, 23%, 24%);
@@ -114,10 +111,17 @@ header {
 
 .card-header {
   display: flex;
+  flex-direction: row;
   gap: 1rem;
+}
+
+.card-footer {
+  display: block;
 }
 
 .icon {
   width: 50px;
   height: 50px;
 }
+
+/* Mobile View */
