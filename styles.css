@@ -19,8 +19,6 @@
 */
 
 html {
-  width: 100%;
-  height: 100%;
   background-image: linear-gradient(180deg, #040918 0%, #091540 100%);
   font-family: "Noto Sans", sans-serif;
 }
@@ -102,7 +100,6 @@ header {
 }
 
 .extension-card {
-  height: 150px;
   padding: 1rem;
   border: 1px solid hsl(225, 23%, 24%);
   border-radius: 20px;
@@ -125,3 +122,23 @@ header {
 }
 
 /* Mobile View */
+@media only screen and (max-width: 600px) {
+  body {
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filters {
+    margin: auto;
+  }
+
+  .container {
+    flex-direction: column;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
