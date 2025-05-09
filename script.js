@@ -16,6 +16,20 @@ const extensionCard =
         const icon = document.createElement("img");
         const removeBtn = document.createElement("button");
 
+        // Creating a toggle
+        const labelSwitch = document.createElement("label");
+        const inputCheckbox = document.createElement("input");
+        const spanSlider = document.createElement("span");
+
+        labelSwitch.appendChild(inputCheckbox);
+        labelSwitch.appendChild(spanSlider);
+
+        // Add class for toggle
+        labelSwitch.className = "switch";
+        inputCheckbox.className = "checkbox";
+        inputCheckbox.type = "checkbox";
+        spanSlider.className = "slider round";
+
         // Customize card component
         card.className = "extension-card";
         cardHeader.className = "card-header";
@@ -34,6 +48,7 @@ const extensionCard =
         cardHeader.appendChild(icon);
         cardHeader.appendChild(cardText);
         cardFooter.appendChild(removeBtn);
+        cardFooter.appendChild(labelSwitch);
         card.appendChild(cardHeader);
         card.appendChild(cardFooter);
         container.appendChild(card);
