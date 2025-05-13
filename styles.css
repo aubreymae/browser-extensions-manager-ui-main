@@ -52,6 +52,10 @@ button {
   color: hsl(0, 0%, 78%);
 }
 
+.filter-btn {
+  background-color: white;
+}
+
 /* Header */
 header {
   padding: 1rem;
@@ -158,8 +162,8 @@ header {
   height: 20px;
   width: 20px;
   left: 4px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 4px;
+  /* transform: translateY(1); */
   background-color: white;
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -176,7 +180,7 @@ input:focus + .slider {
 input:checked + .slider:before {
   -webkit-transform: translateX(20px);
   -ms-transform: translateX(20px);
-  transform: translate(20px, -50%);
+  transform: translate(20px, -1px);
 }
 
 /* Rounded sliders */
