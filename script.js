@@ -35,6 +35,7 @@ const extensionCard =
         cardHeader.className = "card-header";
         cardFooter.className = "card-footer";
         icon.className = "icon";
+        removeBtn.className = "btn-remove"
 
         // Get extension name
         extName.textContent = data[i].name;
@@ -52,6 +53,13 @@ const extensionCard =
         card.appendChild(cardHeader);
         card.appendChild(cardFooter);
         container.appendChild(card);
+
+        /* When the button is pressed, remove the extension div */
+        document.querySelectorAll('.btn-remove').forEach(button => {
+          button.addEventListener('click', function(e) {
+            e.currentTarget.parentNode.parentNode.remove();
+          })
+        });
       }
     })
     .catch((error) => console.error("Failed to load JSON", error));
