@@ -85,6 +85,26 @@ header {
   margin-left: auto;
 }
 
+.filters input[type=checkbox] {
+  display: none;
+  visibility: hidden;
+}
+
+.filters label {
+  display: inline-block;
+  padding: 2px 20px 2px 20px;
+  background-color: hsl(226, 25%, 17%);
+  border-radius: 20px;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+.filters input[type=checkbox]:checked + label {
+  background-color:  hsl(3, 71%, 56%);
+  color: white;
+}
+
 /* Attribution */
 .attribution {
   margin: 2rem;
