@@ -23,23 +23,38 @@
   /* Light Theme Palette */
   --base-light: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
   --text-light: hsl(227, 75%, 14%);
+  --header-bg-color-light: hsl(200, 60%, 99%);
+  --filter-bg-color-light: hsl(200, 60%, 99%);
   --ext-inner-text-light: hsl(226, 11%, 37%);
+  --ext-card-bg-color-light: hsl(200, 60%, 99%);
+  --ext-border-color-light: hsl(217, 61%, 90%);
   --button-border-light: hsl(217, 61%, 90%);
   --button-background-color-light: hsl(0, 0%, 93%);
+  --slider-bg-color-light: hsl(0, 0%, 78%);
 
   /* Dark Theme Palette */
   --base-dark: linear-gradient(180deg, #040918 0%, #091540 100%);
   --text-dark: hsl(200, 60%, 99%);
+  --header-bg-color-dark: hsl(226, 25%, 17%);
+  --filter-bg-color-dark: hsl(226, 25%, 17%);
   --ext-inner-text-dark: hsl(0, 0%, 78%);
+  --ext-card-bg-color-dark: hsl(226, 25%, 17%);
+  --ext-border-color-dark: hsl(225, 23%, 24%);
   --button-border-dark: hsl(225, 23%, 24%);
   --button-background-color-dark: hsl(226, 25%, 17%);
+  --slider-bg-color-dark: hsl(226, 11%, 37%);
 
   /* Default to light theme (or check prefers-color-scheme here) */
   --base: var(--base-light);
   --text: var(--text-light);
+  --header-bg-color: var(--header-bg-color-light);
+  --filter-bg-color: var(--filter-bg-color-light);
   --ext-inner-text: var(--ext-inner-text-light);
+  --ext-card-bg-color: var(--ext-card-bg-color-light);
+  --ext-border-color: var(--ext-border-color-light);
   --button-border: var(--button-border-light);
   --button-background-color: var(--button-background-color-light);
+  --slider-bg-color: var(--slider-bg-color-light);
 }
 
 /* Apply dark theme if system prefers it AND no manual override by JS */
@@ -48,9 +63,14 @@
     /* Check that body doesn't have .light-mode */
     --base: var(--base-dark);
     --text: var(--text-dark);
+    --header-bg-color: var(--header-bg-color-dark);
+    --filter-bg-color: var(--filter-bg-color-dark);
     --ext-inner-text: var(--ext-inner-text-dark);
+    --ext-card-bg-color: var(--ext-card-bg-color-dark);
+    --ext-border-color: var(--ext-border-color-dark);
     --button-border: var(--button-border-dark);
     --button-background-color: var(--button-background-color-dark);
+    --slider-bg-color: var(--slider-bg-color-dark);
   }
 }
 
@@ -58,18 +78,28 @@
 body.dark-mode {
   --base: var(--base-dark);
   --text: var(--text-dark);
+  --header-bg-color: var(--header-bg-color-dark);
+  --filter-bg-color: var(--filter-bg-color-dark);
   --ext-inner-text: var(--ext-inner-text-dark);
+  --ext-card-bg-color: var(--ext-card-bg-color-dark);
+  --ext-border-color: var(--ext-border-color-dark);
   --button-border: var(--button-border-dark);
   --button-background-color: var(--button-background-color-dark);
+  --slider-bg-color: var(--slider-bg-color-dark);
 }
 
 /* Override with .light-mode class from JS (if you use it) */
 body.light-mode {
   --base: var(--base-light);
   --text: var(--text-light);
+  --header-bg-color: var(--header-bg-color-light);
+  --filter-bg-color: var(--filter-bg-color-light);
   --ext-inner-text: var(--ext-inner-text-light);
+  --ext-card-bg-color: var(--ext-card-bg-color-light);
+  --ext-border-color: var(--ext-border-color-light);
   --button-border: var(--button-border-light);
   --button-background-color: var(--button-background-color-light);
+  --slider-bg-color: var(--slider-bg-color-light);
 }
 
 /* Ensure html reflects the color-scheme for browser UI */
@@ -128,7 +158,7 @@ header {
   margin-top: 2rem;
   margin-bottom: 2rem;
   border-radius: 1rem;
-  background-color: hsl(226, 25%, 17%);
+  background-color: var(--header-bg-color);
   font-weight: bold;
   color: var(--text);
 }
@@ -159,7 +189,7 @@ header {
 .filters label {
   display: inline-block;
   padding: 2px 20px 2px 20px;
-  background-color: hsl(226, 25%, 17%);
+  background-color: var(--filter-bg-color);
   border-radius: 20px;
   text-align: center;
   line-height: 30px;
@@ -197,9 +227,9 @@ header {
   flex-direction: column;
   justify-content: space-between;
   padding: 1rem;
-  border: 1px solid hsl(225, 23%, 24%);
+  border: 1px solid var(--ext-border-color);
   border-radius: 20px;
-  background-color: hsl(226, 25%, 17%);
+  background-color: var(--ext-card-bg-color);
 }
 
 .card-header {
@@ -245,7 +275,7 @@ header {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: hsl(226, 11%, 37%);
+  background-color: var(--slider-bg-color);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
