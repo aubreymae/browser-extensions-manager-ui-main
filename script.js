@@ -35,7 +35,7 @@ const extensionCard =
         cardHeader.className = "card-header";
         cardFooter.className = "card-footer";
         icon.className = "icon";
-        removeBtn.className = "btn-remove"
+        removeBtn.className = "btn-remove";
 
         // Get extension name
         extName.textContent = data[i].name;
@@ -59,16 +59,16 @@ const extensionCard =
         card.dataset.active = inputCheckbox.checked ? "true" : "false";
 
         /* When the toggle is pressed, turn on the extension */
-        inputCheckbox.addEventListener('change', () => {
+        inputCheckbox.addEventListener("change", () => {
           card.dataset.active = inputCheckbox.checked ? "true" : "false";
           applyFilter();
-        })
+        });
 
         /* When the button is pressed, remove the extension div */
-        document.querySelectorAll('.btn-remove').forEach(button => {
-          button.addEventListener('click', function(e) {
+        document.querySelectorAll(".btn-remove").forEach((button) => {
+          button.addEventListener("click", function (e) {
             e.currentTarget.parentNode.parentNode.remove();
-          })
+          });
         });
       }
 
@@ -117,3 +117,55 @@ function setupFilters() {
   checkboxAll.checked = true;
   applyFilter();
 }
+
+// Grab SVG icons for Light/dark mode and store in constants
+const lightIcon = document.getElementById("light-icon");
+const darkIcon = document.getElementById("dark-icon");
+
+// Check if dark mode is preferred system-wide
+const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+let darkMode = darkModeMediaQuery.matches;
+
+// Function to apply the theme (class and icon visibility)
+function applyTheme(isDarkMode) {
+  if (isDarkMode) {
+    document.body.classList.add("dark-mode");
+    document.body.classList.remove("light-mode"); // In case you add a light-mode class
+    lightIcon.style.display = "none"; // Hide sun icon
+    darkIcon.style.display = "block"; // Show moon icon
+    document.documentElement.style.colorScheme = "dark";
+  } else {
+    document.body.classList.remove("dark-mode");
+    document.body.classList.add("light-mode"); // In case you add a light-mode class
+    lightIcon.style.display = "block"; // Show sun icon
+    darkIcon.style.display = "none"; // Hide moon icon
+    document.documentElement.style.colorScheme = "light";
+  }
+}
+
+// Set initial theme based on system preference or stored preference
+applyTheme(darkMode);
+
+// Listen for changes in system preference (optional, but good for UX)
+darkModeMediaQuery.addEventListener("change", (e) => {
+  darkMode = e.matches;
+  applyTheme(darkMode);
+});
+
+/// Toggle dark mode on button click
+function toggleLightMode() {
+  // Corrected function name
+  darkMode = !darkMode; // Toggle the state
+  applyTheme(darkMode);
+  // Optional: Store user's preference in localStorage
+  // localStorage.setItem('theme', darkMode ? 'dark' : 'light');
+}
+
+// Optional: Check localStorage for saved theme preference on load
+/*
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+  darkMode = savedTheme === 'dark';
+  applyTheme(darkMode);
+}
+*/

@@ -18,25 +18,71 @@
 **
 */
 
+/* Define your color palettes */
 :root {
-  --base: linear-gradient(180deg, #040918 0%, #091540 100%);
-  --text: hsl(200, 60%, 99%);
-  --ext-inner-text: hsl(0, 0%, 78%);
-  --button-border: hsl(225, 23%, 24%);
-  --button-background-color: hsl(226, 25%, 17%);
+  /* Light Theme Palette */
+  --base-light: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  --text-light: hsl(227, 75%, 14%);
+  --ext-inner-text-light: hsl(226, 11%, 37%);
+  --button-border-light: hsl(217, 61%, 90%);
+  --button-background-color-light: hsl(0, 0%, 93%);
+
+  /* Dark Theme Palette */
+  --base-dark: linear-gradient(180deg, #040918 0%, #091540 100%);
+  --text-dark: hsl(200, 60%, 99%);
+  --ext-inner-text-dark: hsl(0, 0%, 78%);
+  --button-border-dark: hsl(225, 23%, 24%);
+  --button-background-color-dark: hsl(226, 25%, 17%);
+
+  /* Default to light theme (or check prefers-color-scheme here) */
+  --base: var(--base-light);
+  --text: var(--text-light);
+  --ext-inner-text: var(--ext-inner-text-light);
+  --button-border: var(--button-border-light);
+  --button-background-color: var(--button-background-color-light);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --base: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
-    --text: hsl(227, 75%, 14%);
-    --ext-inner-text: hsl(226, 11%, 37%);
+/* Apply dark theme if system prefers it AND no manual override by JS */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light-mode) {
+    /* Check that body doesn't have .light-mode */
+    --base: var(--base-dark);
+    --text: var(--text-dark);
+    --ext-inner-text: var(--ext-inner-text-dark);
+    --button-border: var(--button-border-dark);
+    --button-background-color: var(--button-background-color-dark);
   }
 }
 
+/* Override with .dark-mode class from JS */
+body.dark-mode {
+  --base: var(--base-dark);
+  --text: var(--text-dark);
+  --ext-inner-text: var(--ext-inner-text-dark);
+  --button-border: var(--button-border-dark);
+  --button-background-color: var(--button-background-color-dark);
+}
+
+/* Override with .light-mode class from JS (if you use it) */
+body.light-mode {
+  --base: var(--base-light);
+  --text: var(--text-light);
+  --ext-inner-text: var(--ext-inner-text-light);
+  --button-border: var(--button-border-light);
+  --button-background-color: var(--button-background-color-light);
+}
+
+/* Ensure html reflects the color-scheme for browser UI */
 html {
-  color-scheme: dark light;
+  color-scheme: light; /* Default, JS will change it */
   font-family: "Noto Sans", sans-serif;
+}
+html.dark-mode-active {
+  /* Example if JS puts a class on HTML */
+  color-scheme: dark;
+}
+html.light-mode-active {
+  color-scheme: light;
 }
 
 body {
@@ -76,6 +122,8 @@ button {
 
 /* Header */
 header {
+  display: flex;
+  flex-direction: row;
   padding: 1rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -103,7 +151,7 @@ header {
   margin-left: auto;
 }
 
-.filters input[type=checkbox] {
+.filters input[type="checkbox"] {
   display: none;
   visibility: hidden;
 }
@@ -118,9 +166,13 @@ header {
   cursor: pointer;
 }
 
-.filters input[type=checkbox]:checked + label {
-  background-color:  hsl(3, 71%, 56%);
+.filters input[type="checkbox"]:checked + label {
+  background-color: hsl(3, 71%, 56%);
   color: white;
+}
+
+.btn-dark-light-mode {
+  margin-left: auto;
 }
 
 /* Attribution */
