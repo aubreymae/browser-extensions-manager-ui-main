@@ -18,16 +18,33 @@
 **
 */
 
+:root {
+  --base: linear-gradient(180deg, #040918 0%, #091540 100%);
+  --text: hsl(200, 60%, 99%);
+  --ext-inner-text: hsl(0, 0%, 78%);
+  --button-border: hsl(225, 23%, 24%);
+  --button-background-color: hsl(226, 25%, 17%);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --base: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+    --text: hsl(227, 75%, 14%);
+    --ext-inner-text: hsl(226, 11%, 37%);
+  }
+}
+
 html {
+  color-scheme: dark light;
   font-family: "Noto Sans", sans-serif;
 }
 
 body {
-  background: linear-gradient(180deg, #040918 0%, #091540 100%);
+  background: var(--base);
   min-height: 100vh;
   margin-right: 10rem;
   margin-left: 10rem;
-  color: hsl(0, 0%, 78%);
+  color: var(--text);
 }
 
 h1,
@@ -36,7 +53,7 @@ h3,
 h4 {
   padding: 0;
   margin: 0;
-  color: hsl(200, 60%, 99%);
+  color: var(--text);
 }
 
 button {
@@ -47,10 +64,10 @@ button {
 
   padding-right: 1rem;
   padding-left: 1rem;
-  border: 1px solid hsl(225, 23%, 24%);
+  border: 1px solid var(--button-border);
   border-radius: 1rem;
-  background-color: hsl(226, 25%, 17%);
-  color: hsl(0, 0%, 78%);
+  background-color: var(--button-background-color);
+  color: var(--ext-inner-text);
 }
 
 .filter-btn {
@@ -65,7 +82,7 @@ header {
   border-radius: 1rem;
   background-color: hsl(226, 25%, 17%);
   font-weight: bold;
-  color: hsl(200, 60%, 99%);
+  color: var(--text);
 }
 
 /* Menu */
@@ -147,6 +164,10 @@ header {
 .icon {
   width: 50px;
   height: 50px;
+}
+
+.extension-description {
+  color: var(--ext-inner-text);
 }
 
 /* Toggle */

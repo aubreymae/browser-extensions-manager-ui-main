@@ -41,6 +41,7 @@ const extensionCard =
         extName.textContent = data[i].name;
         extDesc.textContent = data[i].description;
         removeBtn.textContent = "Remove";
+        extDesc.className = "extension-description";
 
         icon.src = data[i].logo;
 
